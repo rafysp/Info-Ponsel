@@ -15,7 +15,7 @@ Aplikasi yang menyediakan sumber informasi tentang ponsel beserta spesifikasinya
 
 ## Tech Stacks
 - Flutter
-- Dart
+- Provider
 - TBA
 
 ## Sample App Demo
