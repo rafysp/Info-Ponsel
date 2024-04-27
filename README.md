@@ -4,7 +4,6 @@
 Aplikasi yang menyediakan sumber informasi tentang ponsel beserta spesifikasinya yang dapat membantu pengguna untuk mencari spesifikasi detail dari ponsel yang diinginkan.
 
 ## Features
-sebutkan fitur-fitur yang ada di project yang dibuat
 
 ### User
 -	Menampilkan seluruh merek ponsel
