@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:info_ponsel/utils/shared_pref.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:info_ponsel/pages/home_page.dart';
 import 'package:info_ponsel/pages/onboarding/onboarding_page.dart';
 
 class SplashPage extends StatefulWidget {
@@ -12,13 +15,25 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 3), () {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (context) => OnboardingPage(),
-        ),
+    checkToken();
+  }
+
+  Future<void> checkToken() async {
+    // Tunda pengecekan token selama 2 detik
+    await Future.delayed(Duration(seconds: 1));
+
+    String? token = await SharedPref.getToken();
+    if (token != null) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const HomePage()),
       );
-    });
+    } else {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const OnboardingPage()),
+      );
+    }
   }
 
   @override
@@ -30,8 +45,7 @@ class _SplashPageState extends State<SplashPage> {
           children: [
             Image.asset(
               'assets/img/splashscreen/splashscreen_1.png',
-              fit:
-                  BoxFit.cover, // Atur agar gambar mencakup seluruh area widget
+              fit: BoxFit.cover,
             ),
             Text(
               'Info Ponsel',
