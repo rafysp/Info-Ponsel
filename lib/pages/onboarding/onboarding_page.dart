@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:info_ponsel/pages/home_page.dart';
 import 'package:info_ponsel/pages/onboarding/onboarding_page_model.dart';
+import 'package:info_ponsel/utils/shared_pref.dart';
 import 'package:info_ponsel/widgets/onboarding/onboarding_widgets.dart';
 
 class OnboardingPage extends StatelessWidget {
@@ -115,7 +117,11 @@ class _OnboardingPageState extends State<OnboardingPagePresenter> {
                         ),
                       ),
                       onPressed: () {
-                        // Handle skip button
+                        SharedPref.createToken();
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const HomePage()));
                       },
                       child: const Text("Skip"),
                     ),
@@ -130,7 +136,11 @@ class _OnboardingPageState extends State<OnboardingPagePresenter> {
                       ),
                       onPressed: () {
                         if (_currentPage == widget.pages.length - 1) {
-                          // Handle finish button
+                          SharedPref.createToken();
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const HomePage()));
                         } else {
                           _pageController.animateToPage(
                             _currentPage + 1,
