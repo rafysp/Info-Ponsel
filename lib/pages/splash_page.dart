@@ -13,7 +13,7 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.of(context).push(
+      Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (context) => OnboardingPage(),
         ),
@@ -29,7 +29,7 @@ class _SplashPageState extends State<SplashPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/img/splashscreen_3.png',
+              'assets/img/splashscreen/splashscreen_1.png',
               fit:
                   BoxFit.cover, // Atur agar gambar mencakup seluruh area widget
             ),
@@ -50,7 +50,10 @@ class _SplashPageState extends State<SplashPage> {
               ),
             ),
             const SizedBox(height: 30),
-            const CircularProgressIndicator(),
+            SizedBox(
+              width: 200,
+              child: LinearProgressIndicator(),
+            ),
           ],
         ),
       ),
