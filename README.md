@@ -6,16 +6,18 @@ Aplikasi yang menyediakan sumber informasi tentang ponsel beserta spesifikasinya
 ## Features
 
 ### User
--	Menampilkan seluruh merek ponsel
--	Menampilkan seluruh model ponsel berdasarkan merek 
--	Pencarian berdasarkan merek atau model
--	Menampilkan detail ponsel
--	Perbandingan spesifikasi antara dua ponsel
--	Tambahkan ponsel ke favorit
+-   Menampilkan ponsel terbaru
+- 	Menampilkan berita tentang gadget
+-   Menampilkan seluruh model ponsel berdasarkan merek
+-   Pencarian berdasarkan merek atau model
+-   Menampilkan detail spesifikasi ponsel
+-   Perbandingan spesifikasi antara dua ponsel
+-   Tambahkan ponsel ke favorit
 
 ## Tech Stacks
 - Flutter
 - Provider
+- Dio
 - TBA
 
 ## Sample App Demo
