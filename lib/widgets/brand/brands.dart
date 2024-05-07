@@ -68,7 +68,7 @@ class _BrandsState extends State<Brands> {
   String brandNameToImagePath(String brandName) {
     String formattedBrandName = brandName.toLowerCase().replaceAll(' ', '');
 
-    return 'assets/icons/$formattedBrandName.png';
+    return 'assets/img/brands/$formattedBrandName.png';
   }
 
   @override
@@ -82,6 +82,9 @@ class _BrandsState extends State<Brands> {
           ...brands.map<Widget>((brand) {
             return BrandsCard(
               text: brand != null && brand['name'] != null ? brand['name'] : '',
+              imagePath: brand != null && brand['name'] != null
+                  ? brandNameToImagePath(brand['name'])
+                  : '',
               onTap: () {
                 Navigator.push(
                   context,
@@ -93,20 +96,17 @@ class _BrandsState extends State<Brands> {
                   ),
                 );
               },
-              imagePath: brand != null && brand['name'] != null
-                  ? brandNameToImagePath(brand['name'])
-                  : '',
             );
           }).toList(),
           InkWell(
             onTap: () {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => AllBrandsPage(),
-      ),
-    );
-  },
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AllBrandsPage(),
+                ),
+              );
+            },
             child: SizedBox(
               width: MediaQuery.of(context).size.width * 0.15,
               child: Column(
