@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:info_ponsel/all_brands_page.dart';
+import 'package:info_ponsel/phonelist.dart';
 import 'package:info_ponsel/widgets/brand/brands_card.dart';
 
 class Brands extends StatefulWidget {
@@ -31,6 +32,11 @@ class _BrandsState extends State<Brands> {
   void initState() {
     super.initState();
     fetchBrands();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   Future<void> fetchBrands() async {
@@ -77,7 +83,15 @@ class _BrandsState extends State<Brands> {
             return BrandsCard(
               text: brand != null && brand['name'] != null ? brand['name'] : '',
               onTap: () {
-                
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PhoneListPage(
+                      brandId: brand['id'].toString(),
+                      brandName: brand['name'],
+                    ),
+                  ),
+                );
               },
               imagePath: brand != null && brand['name'] != null
                   ? brandNameToImagePath(brand['name'])
