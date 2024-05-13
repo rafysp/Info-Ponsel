@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:info_ponsel/env.dart';
 import 'package:info_ponsel/model/phone_detail_model.dart';
 
 class PhoneService {
@@ -10,7 +11,7 @@ class PhoneService {
         options: Options(
           headers: {
             'X-RapidAPI-Key':
-                'ba10f8876amsh724918adf1fdaecp147319jsn2cf56f4f34f3',
+                apiKey,
             'X-RapidAPI-Host': 'mobile-phones2.p.rapidapi.com',
           },
         ),
