@@ -1,11 +1,9 @@
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:info_ponsel/model/phone_detail_model.dart';
 import 'package:info_ponsel/model/service/phone_detail_service.dart';
 import 'package:info_ponsel/utils/favorite_utils.dart';
 import 'package:info_ponsel/widgets/spec_section_widget.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class PhoneDetailPage extends StatefulWidget {
   final String? phoneId;
