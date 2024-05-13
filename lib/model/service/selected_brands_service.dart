@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:info_ponsel/env.dart';
 import 'package:info_ponsel/model/brands_model.dart';
 
 class SelectedBrandsService {
@@ -7,7 +8,7 @@ class SelectedBrandsService {
   static Future<List<BrandModel>> fetchBrands(List<String> selectedBrands) async {
     try {
       _dio.options.headers = {
-        'X-RapidAPI-Key': 'ba10f8876amsh724918adf1fdaecp147319jsn2cf56f4f34f3',
+        'X-RapidAPI-Key': apiKey,
         'X-RapidAPI-Host': 'mobile-phones2.p.rapidapi.com',
       };
 
