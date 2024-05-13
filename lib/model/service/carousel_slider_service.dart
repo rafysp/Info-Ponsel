@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:info_ponsel/env.dart';
 import 'package:info_ponsel/model/carousel_slider_model.dart';
 
 class CarouselSliderService {
@@ -12,7 +13,7 @@ class CarouselSliderService {
           headers: {
             "content-type": "application/json",
             "X-RapidAPI-Key":
-                "35218eb613mshbce9eb4ca7e7b5cp101623jsnf558459834f4", // Ganti dengan API key Anda
+                "$newsApiKey", 
             "X-RapidAPI-Host": "newsnow.p.rapidapi.com",
           },
         ),
