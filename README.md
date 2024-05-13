@@ -9,9 +9,9 @@ Aplikasi yang menyediakan sumber informasi tentang ponsel beserta spesifikasinya
 -   Menampilkan ponsel terbaru
 - 	Menampilkan berita tentang gadget
 -   Menampilkan seluruh model ponsel berdasarkan merek
--   Pencarian berdasarkan merek atau model
+-   Pencarian berdasarkan merek atau model ponsel
 -   Menampilkan detail spesifikasi ponsel
--   Perbandingan spesifikasi antara dua ponsel
+-   Merekomendasikan ponsel sesuai budget dan kebutuhan dengan teknologi AI 
 -   Tambahkan ponsel ke favorit
 
 ## Tech Stacks
