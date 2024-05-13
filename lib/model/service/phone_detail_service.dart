@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 import 'package:info_ponsel/env.dart';
 import 'package:info_ponsel/model/phone_detail_model.dart';
 
