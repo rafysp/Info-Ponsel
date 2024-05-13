@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:info_ponsel/utils/shared_pref.dart';
+import 'package:info_ponsel/utils/onboarding_utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:info_ponsel/pages/home_page.dart';
-import 'package:info_ponsel/pages/onboarding/onboarding_page.dart';
+import 'package:info_ponsel/pages/onboarding_page.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -20,7 +20,7 @@ class _SplashPageState extends State<SplashPage> {
 
   Future<void> checkToken() async {
     // Tunda pengecekan token selama 2 detik
-    await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(Duration(seconds: 2));
 
     String? token = await SharedPref.getToken();
     if (token != null) {
@@ -45,7 +45,7 @@ class _SplashPageState extends State<SplashPage> {
           children: [
             Image.asset(
               'assets/img/splashscreen/splashscreen_1.png',
-              fit: BoxFit.cover,
+              fit: BoxFit.contain,
             ),
             Text(
               'Info Ponsel',
@@ -64,10 +64,6 @@ class _SplashPageState extends State<SplashPage> {
               ),
             ),
             const SizedBox(height: 30),
-            SizedBox(
-              width: 200,
-              child: LinearProgressIndicator(),
-            ),
           ],
         ),
       ),
