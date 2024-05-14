@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:dio/dio.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 
 class GeminiService {
