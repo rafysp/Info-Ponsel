@@ -39,7 +39,7 @@ class _PhoneDetailPageState extends State<PhoneDetailPage> {
       appBar: AppBar(
         title: Row(
           children: [
-            Expanded(child: Text(widget.phoneName!)),
+            Expanded(child: Text('${widget.brandName} ${widget.phoneName}')),
           ],
         ),
         actions: [
