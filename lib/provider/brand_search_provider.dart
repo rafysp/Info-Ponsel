@@ -15,7 +15,7 @@ class BrandSearchProvider extends ChangeNotifier {
   }
 
   Future<void> fetchData() async {
-    setLoading(true); // Set loading to true before fetching data
+    setLoading(true); // Set loading ke true sebelum fetching data
     try {
       AllBrandsService brandService = AllBrandsService();
       List<dynamic> brands = await brandService.fetchBrands();
@@ -24,7 +24,7 @@ class BrandSearchProvider extends ChangeNotifier {
     } catch (e) {
       print('Error fetching all brands: $e');
     } finally {
-      setLoading(false); // Set loading to false after fetching data
+      setLoading(false); // set loading ke false setelah selesai fetching data
     }
   }
 
@@ -33,7 +33,6 @@ class BrandSearchProvider extends ChangeNotifier {
         .where(
             (brand) => brand.name.toLowerCase().contains(query.toLowerCase()))
         .toList();
-    // Debugging: Print filtered brands
     notifyListeners();
   }
 

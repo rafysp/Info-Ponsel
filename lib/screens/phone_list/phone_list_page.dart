@@ -40,8 +40,8 @@ class _PhoneListPageState extends State<PhoneListPage> {
     List<PhoneListModel> fetchedPhones =
         await PhoneListService.fetchPhonesByBrand(
             widget.brandId, currentPage, pageSize);
-    // Check if the widget is still mounted before calling setState
     if (mounted) {
+      // Cek apakah widget masih ada di dalam tree sebelum melakukan setState
       setState(() {
         phones.addAll(fetchedPhones);
         filteredPhones = phones;

@@ -65,6 +65,7 @@ class _OnboardingPagePresenterState extends State<OnboardingPagePresenter> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: AnimatedContainer(
+        // Fungsi untuk mengubah warna background
         duration: const Duration(milliseconds: 250),
         color: _currentPage < widget.pages.length
             ? widget.pages[_currentPage].bgColor
@@ -87,6 +88,7 @@ class _OnboardingPagePresenterState extends State<OnboardingPagePresenter> {
                 ),
               ),
               Row(
+                // Fungsi untuk menampilkan indikator halaman
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: widget.pages
                     .asMap()
@@ -106,6 +108,7 @@ class _OnboardingPagePresenterState extends State<OnboardingPagePresenter> {
                     .toList(),
               ),
               SizedBox(
+                // Fungsi untuk menampilkan tombol Skip dan Next
                 height: 100,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -140,6 +143,7 @@ class _OnboardingPagePresenterState extends State<OnboardingPagePresenter> {
                       onPressed: () {
                         final int nextPage = _currentPage + 1;
                         if (nextPage == widget.pages.length) {
+                          // Jika halaman terakhir, maka navigasi ke halaman Home
                           SharedPref.createToken();
                           Navigator.pushReplacement(
                               context,

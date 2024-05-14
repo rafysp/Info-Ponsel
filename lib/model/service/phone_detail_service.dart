@@ -21,6 +21,7 @@ class PhoneService {
 
         Map<String, List<AllSpec>> allSpecs = {};
         responseData['all_specs'].forEach((category, specs) {
+          // Ubah data spesifikasi menjadi list AllSpec
           List<AllSpec> specList = [];
           specs.forEach((spec) {
             specList.add(AllSpec(

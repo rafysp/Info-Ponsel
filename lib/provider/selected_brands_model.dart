@@ -17,7 +17,7 @@ class SelectedBrandsProvider extends ChangeNotifier {
       // Panggil metode fetchBrands dari BrandService
       List<BrandModel> responseData = await SelectedBrandsService.fetchBrands(selectedBrands);
 
-      // Setel nilai merek setelah berhasil mendapatkan data dari BrandService
+      // Memmberi nilai merek setelah berhasil mendapatkan data dari BrandService
       brands = responseData;
     } catch (e) {
       print('Error fetching brands: $e');

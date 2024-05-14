@@ -59,6 +59,7 @@ class _BrandsContentState extends State<BrandsContent> {
             spacing: 16.0,
             runSpacing: 10.0,
             children: [
+              // ... Operator Spread
               ...brandModel.brands.map<Widget>((brand) {
                 return SelectedBrandsCard(
                   text: brand.name ?? '',

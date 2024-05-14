@@ -54,6 +54,7 @@ class _AllBrandsPageState extends State<AllBrandsPage> {
                 child: Row(
                   children: [
                     Expanded(
+                      // Fitur untuk mencari brand
                       child: TextField(
                         controller: searchController,
                         onChanged: (query) =>
@@ -78,6 +79,7 @@ class _AllBrandsPageState extends State<AllBrandsPage> {
               ),
               const SizedBox(height: 10.0),
               Expanded(
+                // Fitur untuk menampilkan daftar brand
                 child: (() {
                   if (brandSearchProvider.isLoading) {
                     return const Center(
@@ -96,13 +98,14 @@ class _AllBrandsPageState extends State<AllBrandsPage> {
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10.0),
                         child: GridView.builder(
+                          // Gridview untuk menampilkan daftar brand
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
                             mainAxisSpacing: 20.0,
                             crossAxisSpacing: 15.0,
                           ),
-                          // Fitur untuk menampilkan daftar brand
+                          // Menggunakan provider untuk mendapatkan daftar brand yang sudah difilter
                           itemCount: brandSearchProvider.filteredBrands.length,
                           itemBuilder: (context, index) {
                             var brand =

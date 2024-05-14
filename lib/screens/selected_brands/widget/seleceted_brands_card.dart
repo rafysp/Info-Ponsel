@@ -1,5 +1,3 @@
-// BRANDS_CARD.DART
-
 import 'package:flutter/material.dart';
 
 class SelectedBrandsCard extends StatelessWidget {

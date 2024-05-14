@@ -16,17 +16,19 @@ class SelectedBrandsService {
 
       if (response.statusCode == 200) {
         List<Map<String, dynamic>> brandsJson = List<Map<String, dynamic>>.from(response.data);
+        // Untuk mendapatkan data merek yang dipilih
         List<BrandModel> brands = brandsJson
             .where((brand) => brand['name'] != null && selectedBrands.contains(brand['name']))
             .map((brand) => BrandModel.fromJson(brand))
             .toList();
+            // Fungsi where() digunakan untuk memfilter data 
         return brands;
       } else {
         throw Exception('Failed to fetch brands');
       }
     } catch (e) {
       print('Error fetching brands: $e');
-      throw e; // Rethrow the error to propagate it further if needed
+      throw e; 
     }
   }
 }

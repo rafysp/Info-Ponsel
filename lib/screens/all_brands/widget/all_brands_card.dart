@@ -22,6 +22,7 @@ class AllBrandsCard extends StatelessWidget {
         ],
       ),
       child: Column(
+        // Kolom untuk menampilkan gambar dan nama brand
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(

@@ -31,9 +31,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+  
       bottomNavigationBar: FutureBuilder<List<List<PonselTerbaruModel>>>(
         future: _phoneModelsFuture,
         builder: (context, snapshot) {
+          // Jika future belum selesai, tampilkan BottomAppBar kosong
           if (snapshot.connectionState == ConnectionState.waiting) {
             return BottomAppBar(
               child: Container(),
@@ -52,6 +54,7 @@ class _HomePageState extends State<HomePage> {
               );
             } else {
               return BottomNavigationBar(
+                // Menambahkan BottomNavigationBarItem
                 items: const <BottomNavigationBarItem>[
                   BottomNavigationBarItem(
                     icon: Icon(Icons.home),

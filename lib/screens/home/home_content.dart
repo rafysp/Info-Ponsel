@@ -19,12 +19,14 @@ class HomeContent extends StatelessWidget {
       child: FutureBuilder(
         future: phoneModelsFuture,
         builder: (context, snapshot) {
+          // Jika future belum selesai, tampilkan CircularProgressIndicator
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else {
             return SingleChildScrollView(
+              // Tampilkan konten home
               child: Column(
                 children: [
                   const SizedBox(height: 10.0),
@@ -88,6 +90,7 @@ class HomeContent extends StatelessWidget {
                   FutureBuilder<List<List<PonselTerbaruModel>>>(
                     future: phoneModelsFuture,
                     builder: (context, snapshot) {
+                      // Jika future belum selesai, tampilkan CircularProgressIndicator
                       if (snapshot.connectionState == ConnectionState.waiting) {
                         return const Center(child: CircularProgressIndicator());
                       } else if (snapshot.hasError) {

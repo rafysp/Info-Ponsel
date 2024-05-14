@@ -44,7 +44,7 @@ class SpecSectionWidget extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 10.0,
-                    vertical: 4.0, // Kurangi padding vertikal menjadi 4.0
+                    vertical: 4.0, 
                   ),
                   child: ListTile(
                     title: Text(

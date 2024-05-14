@@ -83,7 +83,7 @@ class RecommendationPageContent extends StatelessWidget {
                       ),
                       SizedBox(
                           height:
-                              16), // Tambahkan SizedBox untuk memberikan jarak antara setiap kolom prioritas
+                              16),
                     ],
                   );
                 },

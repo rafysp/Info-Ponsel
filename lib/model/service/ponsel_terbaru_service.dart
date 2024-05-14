@@ -24,6 +24,7 @@ class PonselTerbaruService {
           List<dynamic> data = response.data['data'] ?? [];
           List<PonselTerbaruModel> brandPhoneModels =
               data.map((json) => PonselTerbaruModel.fromJson(json)).toList();
+              // Fungsi map() digunakan untuk mengubah setiap item dalam list
           allBrandPhoneModels.add(brandPhoneModels);
         } else {
           print('Request failed with status: ${response.statusCode}');

@@ -15,6 +15,7 @@ class CarouselSliderItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FractionallySizedBox(
+      // Lebar item akan mengikuti lebar layar
       widthFactor: 1.08,
       child: AnimatedScale(
         duration: const Duration(milliseconds: 400),
@@ -33,6 +34,7 @@ class CarouselSliderItem extends StatelessWidget {
             child: Stack(
               fit: StackFit.expand,
               children: [
+                // Tampilkan gambar dari URL
                 Image.network(
                   item.imageUrl!,
                   fit: BoxFit.cover,
@@ -52,6 +54,7 @@ class CarouselSliderItem extends StatelessWidget {
                 ),
 
                 Container(
+                  // Tambahkan dekorasi gradient pada bagian bawah gambar
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       begin: Alignment.bottomCenter,
@@ -63,6 +66,7 @@ class CarouselSliderItem extends StatelessWidget {
                     ),
                   ),
                   child: Column(
+                    // Isi dari container ini akan ditampilkan di atas gambar
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
