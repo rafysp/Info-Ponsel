@@ -43,7 +43,7 @@ class _AllBrandsPageState extends State<AllBrandsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('All Brands'),
+        title: const Text('All Brands'),
       ),
       body: Consumer<BrandSearchProvider>(
         builder: (context, brandSearchProvider, _) {
@@ -67,7 +67,7 @@ class _AllBrandsPageState extends State<AllBrandsPage> {
                       ),
                     ),
                     IconButton(
-                      icon: Icon(Icons.clear),
+                      icon: const Icon(Icons.clear),
                       onPressed: () {
                         searchController.clear();
                         brandSearchProvider.searchBrands('');
@@ -76,15 +76,15 @@ class _AllBrandsPageState extends State<AllBrandsPage> {
                   ],
                 ),
               ),
-              SizedBox(height: 10.0),
+              const SizedBox(height: 10.0),
               Expanded(
                 child: (() {
                   if (brandSearchProvider.isLoading) {
-                    return Center(
+                    return const Center(
                       child: CircularProgressIndicator(),
                     );
                   } else if (brandSearchProvider.filteredBrands.isEmpty) {
-                    return Center(
+                    return const Center(
                       child: Text('No brands found'),
                     );
                   } else {
@@ -92,16 +92,17 @@ class _AllBrandsPageState extends State<AllBrandsPage> {
                       thumbVisibility: true,
                       interactive: true,
                       thickness: 10,
-                      radius: Radius.circular(15),
+                      radius: const Radius.circular(15),
                       child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10.0),
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
                         child: GridView.builder(
                           gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
+                              const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
                             mainAxisSpacing: 20.0,
                             crossAxisSpacing: 15.0,
                           ),
+                          // Fitur untuk menampilkan daftar brand
                           itemCount: brandSearchProvider.filteredBrands.length,
                           itemBuilder: (context, index) {
                             var brand =
