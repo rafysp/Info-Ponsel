@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:info_ponsel/env.dart';
 import 'package:info_ponsel/model/brands_model.dart'; // Import BrandModel
 
 class AllBrandsService {
@@ -9,7 +10,7 @@ class AllBrandsService {
         options: Options(
           headers: {
             'X-RapidAPI-Key':
-                'ba10f8876amsh724918adf1fdaecp147319jsn2cf56f4f34f3',
+                apiKey,
             'X-RapidAPI-Host': 'mobile-phones2.p.rapidapi.com',
           },
         ),
@@ -22,8 +23,8 @@ class AllBrandsService {
 
         // Urutkan berdasarkan nama brand
         brands.sort((a, b) {
-          final aName = a.name ?? ''; // Use empty string as default if null
-          final bName = b.name ?? ''; // Use empty string as default if null
+          final aName = a.name ?? '';
+          final bName = b.name ?? ''; 
           return aName.compareTo(bName);
         });
 
