@@ -3,9 +3,7 @@ import 'package:info_ponsel/model/ponsel_terbaru_model.dart';
 import 'package:info_ponsel/model/service/ponsel_terbaru_service.dart';
 import 'package:info_ponsel/screens/home/home_content.dart';
 import 'package:info_ponsel/screens/recommendation/recommendation_page.dart';
-import 'package:info_ponsel/screens/selected_brands/selected_brands.dart';
-import 'package:info_ponsel/screens/carousel_news/carousel_slider.dart';
-import 'package:info_ponsel/screens/ponsel_terbaru/ponsel_terbaru.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
