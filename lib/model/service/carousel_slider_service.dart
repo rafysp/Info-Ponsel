@@ -28,6 +28,7 @@ class CarouselSliderService {
           List<Map<String, dynamic>>.from(response.data['news']);
       responseData
           .removeWhere((item) => item['title'].toLowerCase().contains('mod'));
+          // Fungsi removeWhere() digunakan untuk menghapus title berita yang mengandung kata 'mod'
 
       List<CarouselSliderItemModel> carouselItems = responseData
           .map((item) => CarouselSliderItemModel.fromJson(item))
