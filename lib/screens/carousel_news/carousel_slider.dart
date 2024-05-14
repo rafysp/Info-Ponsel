@@ -77,6 +77,7 @@ class _HomeCarouselSliderState extends State<HomeCarouselSlider> {
           ? Center(child: CircularProgressIndicator())
           : PageView.builder(
               onPageChanged: (index) {
+                // 
                 setState(() {
                   _pageIndex = index % 7;
                 });
