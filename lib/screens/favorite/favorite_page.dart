@@ -1,8 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:info_ponsel/model/service/all_brands_service.dart';
-import 'package:info_ponsel/screens/phone_detail/phone_detail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:info_ponsel/screens/favorite/widget/favorite_list_tile.dart';
 
