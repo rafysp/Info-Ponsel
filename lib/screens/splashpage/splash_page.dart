@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:info_ponsel/utils/onboarding_utils.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:info_ponsel/screens/home/home_page.dart';
 import 'package:info_ponsel/screens/onboarding/onboarding_page.dart';
 
