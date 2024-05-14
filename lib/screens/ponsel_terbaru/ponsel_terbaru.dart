@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:info_ponsel/model/ponsel_terbaru_model.dart';
-import 'package:info_ponsel/pages/phone_detail.dart';
+import 'package:info_ponsel/screens/phone_detail/phone_detail.dart';
 
 class PonselTerbaruCard extends StatelessWidget {
   const PonselTerbaruCard({

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:info_ponsel/utils/onboarding_utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:info_ponsel/pages/home_page.dart';
-import 'package:info_ponsel/pages/onboarding_page.dart';
+import 'package:info_ponsel/screens/home/home_page.dart';
+import 'package:info_ponsel/screens/onboarding/onboarding_page.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);

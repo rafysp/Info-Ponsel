@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:info_ponsel/model/carousel_slider_model.dart';
-import 'package:info_ponsel/pages/inappwebview_page.dart';
+import 'package:info_ponsel/screens/in_app_webview/inappwebview_page.dart';
 
 class CarouselSliderItem extends StatelessWidget {
   final CarouselSliderItemModel item;
@@ -36,19 +36,21 @@ class CarouselSliderItem extends StatelessWidget {
                 Image.network(
                   item.imageUrl!,
                   fit: BoxFit.cover,
+                  // Jika terjadi error saat memuat gambar, tampilkan icon error
                   errorBuilder: (context, error, stackTrace) {
                     return Container(
                       color: Colors.white,
                       child: const Center(
                         child: Icon(
                           Icons.error,
-                          color: Colors.red, // Warna ikon error tanda seru
-                          size: 48, // Ukuran ikon
+                          color: Colors.red,
+                          size: 48,
                         ),
                       ),
                     );
                   },
                 ),
+
                 Container(
                   decoration: BoxDecoration(
                     gradient: LinearGradient(

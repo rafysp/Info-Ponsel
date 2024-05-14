@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:info_ponsel/pages/all_brands_page.dart';
-import 'package:info_ponsel/pages/phone_list_page.dart';
+import 'package:info_ponsel/screens/all_brands/all_brands_page.dart';
+import 'package:info_ponsel/screens/phone_list/phone_list_page.dart';
 import 'package:info_ponsel/provider/selected_brands_model.dart';
-import 'package:info_ponsel/widgets/brands_card.dart';
+import 'package:info_ponsel/screens/selected_brands/widget/seleceted_brands_card.dart';
 import 'package:provider/provider.dart';
 
-class Brands extends StatelessWidget {
+class SelectedBrands extends StatelessWidget {
   final List<String> selectedBrands;
-  Brands({Key? key, List<String>? selectedBrands})
+  SelectedBrands({Key? key, List<String>? selectedBrands})
       : selectedBrands = selectedBrands ??
             const [
               'Apple',
@@ -60,7 +60,7 @@ class _BrandsContentState extends State<BrandsContent> {
             runSpacing: 10.0,
             children: [
               ...brandModel.brands.map<Widget>((brand) {
-                return BrandsCard(
+                return SelectedBrandsCard(
                   // ignore: unnecessary_null_comparison
                   text: brand != null ? brand.name! : '',
                   imagePath:

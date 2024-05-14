@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:info_ponsel/pages/phone_detail.dart';
+import 'package:info_ponsel/screens/phone_detail/phone_detail.dart';
 
 class FavoriteListTile extends StatelessWidget {
   final Map<String, dynamic> phone;

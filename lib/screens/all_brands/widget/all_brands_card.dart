@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:info_ponsel/pages/all_brands_page.dart';
+import 'package:info_ponsel/screens/all_brands/all_brands_page.dart';
 
 class AllBrandsCard extends StatelessWidget {
   final String name;

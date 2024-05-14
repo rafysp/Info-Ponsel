@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class FavoriteService {
+  
   static bool isPhoneAlreadyFavorite(String phoneId, List<String> favoritePhonesJson) {
     for (String jsonString in favoritePhonesJson) {
       Map<String, dynamic> phone = jsonDecode(jsonString);
@@ -30,16 +31,16 @@ class FavoriteService {
         await prefs.setStringList('favorite_phones', favoritePhonesJson);
 
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Added to favorites')),
+          const SnackBar(content: Text('Added to favorites')),
         );
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Phone is already in favorites')),
+          const SnackBar(content: Text('Phone is already in favorites')),
         );
       }
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error adding to favorites')),
+        const SnackBar(content: Text('Error adding to favorites')),
       );
     }
   }

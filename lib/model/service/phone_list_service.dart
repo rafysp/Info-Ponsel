@@ -3,7 +3,8 @@ import 'package:info_ponsel/env.dart';
 import 'package:info_ponsel/model/phone_list_model.dart';
 
 class PhoneListService {
-  static Future<List<PhoneListModel>> fetchPhonesByBrand(int brandId, int page, int pageSize) async {
+  static Future<List<PhoneListModel>> fetchPhonesByBrand(
+      int brandId, int page, int pageSize) async {
     try {
       Response response = await Dio().get(
         'https://mobile-phones2.p.rapidapi.com/$brandId/phones',

@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:info_ponsel/model/carousel_slider_model.dart';
-import 'package:info_ponsel/widgets/carousel_slider_item.dart';
+import 'package:info_ponsel/screens/carousel_news/widget/carousel_slider_item.dart';
 
 class HomeCarouselSlider extends StatefulWidget {
   const HomeCarouselSlider({Key? key}) : super(key: key);

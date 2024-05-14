@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:info_ponsel/env.dart';
 import 'package:info_ponsel/model/recommendation_model.dart';
-import 'package:info_ponsel/pages/splash_page.dart';
+import 'package:info_ponsel/screens/splashpage/splash_page.dart';
 import 'package:info_ponsel/provider/brand_search_provider.dart';
 import 'package:info_ponsel/provider/selected_brands_model.dart';
 import 'package:provider/provider.dart';

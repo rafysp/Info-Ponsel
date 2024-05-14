@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-class BrandsCard extends StatelessWidget {
-  const BrandsCard({
+class SelectedBrandsCard extends StatelessWidget {
+  const SelectedBrandsCard({
     Key? key,
     required this.text,
     required this.imagePath,

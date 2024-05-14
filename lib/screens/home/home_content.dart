@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:info_ponsel/model/ponsel_terbaru_model.dart';
-import 'package:info_ponsel/pages/carousel_slider.dart';
-import 'package:info_ponsel/pages/favorite_page.dart';
-import 'package:info_ponsel/pages/selected_brands.dart';
-import 'package:info_ponsel/widgets/ponsel_terbaru_card.dart';
+import 'package:info_ponsel/screens/carousel_news/carousel_slider.dart';
+import 'package:info_ponsel/screens/favorite/favorite_page.dart';
+import 'package:info_ponsel/screens/selected_brands/selected_brands.dart';
+import 'package:info_ponsel/screens/ponsel_terbaru/ponsel_terbaru.dart';
 
 class HomeContent extends StatelessWidget {
   final Future<List<List<PonselTerbaruModel>>> phoneModelsFuture;
@@ -67,7 +67,7 @@ class HomeContent extends StatelessWidget {
                   const SizedBox(height: 10.0),
                   const HomeCarouselSlider(),
                   const SizedBox(height: 20.0),
-                  Brands(),
+                  SelectedBrands(),
                   const SizedBox(height: 20.0),
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16.0),

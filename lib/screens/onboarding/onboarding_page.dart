@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:info_ponsel/pages/home_page.dart';
+import 'package:info_ponsel/screens/home/home_page.dart';
 import 'package:info_ponsel/model/onboarding_page_model.dart';
 import 'package:info_ponsel/utils/onboarding_utils.dart';
-import 'package:info_ponsel/widgets/onboarding_widgets.dart';
+import 'package:info_ponsel/screens/onboarding/widget/onboarding_widgets.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({Key? key}) : super(key: key);

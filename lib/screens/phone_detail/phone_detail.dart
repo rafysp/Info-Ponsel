@@ -1,9 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:info_ponsel/model/phone_detail_model.dart';
 import 'package:info_ponsel/model/service/phone_detail_service.dart';
 import 'package:info_ponsel/utils/favorite_utils.dart';
-import 'package:info_ponsel/widgets/spec_section_widget.dart';
+import 'package:info_ponsel/screens/phone_detail/widget/spec_section_widget.dart';
 
 class PhoneDetailPage extends StatefulWidget {
   final String? phoneId;
@@ -100,6 +99,10 @@ class _PhoneDetailPageState extends State<PhoneDetailPage> {
                     SpecSectionWidget(
                         title: 'Battery',
                         specs: phoneDetail.allSpecs['Battery']),
+                    SpecSectionWidget(
+                        title: 'Launch', specs: phoneDetail.allSpecs['Launch']),
+                    SpecSectionWidget(
+                        title: 'Misc', specs: phoneDetail.allSpecs['Misc']),
                   ],
                 ),
               ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:info_ponsel/model/service/all_brands_service.dart';
-import 'package:info_ponsel/pages/phone_list_page.dart';
+import 'package:info_ponsel/screens/phone_list/phone_list_page.dart';
 import 'package:info_ponsel/provider/brand_search_provider.dart';
-import 'package:info_ponsel/widgets/all_brands_card.dart';
+import 'package:info_ponsel/screens/all_brands/widget/all_brands_card.dart';
 import 'package:provider/provider.dart';
 
 class AllBrandsPage extends StatefulWidget {
@@ -51,14 +51,29 @@ class _AllBrandsPageState extends State<AllBrandsPage> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: TextField(
-                  onChanged: (query) => brandSearchProvider.searchBrands(query),
-                  decoration: InputDecoration(
-                    labelText: 'Search Brands',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        controller: searchController,
+                        onChanged: (query) =>
+                            brandSearchProvider.searchBrands(query),
+                        decoration: InputDecoration(
+                          labelText: 'Search Brands',
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
+                    IconButton(
+                      icon: Icon(Icons.clear),
+                      onPressed: () {
+                        searchController.clear();
+                        brandSearchProvider.searchBrands('');
+                      },
+                    ),
+                  ],
                 ),
               ),
               SizedBox(height: 10.0),

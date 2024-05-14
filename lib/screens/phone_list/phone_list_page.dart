@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:info_ponsel/pages/phone_detail.dart';
-import 'package:info_ponsel/widgets/phone_list_item.dart';
+import 'package:info_ponsel/screens/phone_detail/phone_detail.dart';
+import 'package:info_ponsel/screens/phone_list/widget/phone_list_item.dart';
 import 'package:info_ponsel/model/phone_list_model.dart';
 import 'package:info_ponsel/model/service/phone_list_service.dart';
 
@@ -40,11 +40,14 @@ class _PhoneListPageState extends State<PhoneListPage> {
     List<PhoneListModel> fetchedPhones =
         await PhoneListService.fetchPhonesByBrand(
             widget.brandId, currentPage, pageSize);
-    setState(() {
-      phones.addAll(fetchedPhones);
-      filteredPhones = phones;
-      isLoading = false;
-    });
+    // Check if the widget is still mounted before calling setState
+    if (mounted) {
+      setState(() {
+        phones.addAll(fetchedPhones);
+        filteredPhones = phones;
+        isLoading = false;
+      });
+    }
   }
 
   void searchPhones() {
@@ -61,6 +64,13 @@ class _PhoneListPageState extends State<PhoneListPage> {
               (name.contains(query) || description.contains(query));
         }).toList();
       }
+    });
+  }
+
+  void clearSearch() {
+    setState(() {
+      searchController.clear();
+      filteredPhones = phones;
     });
   }
 
@@ -81,13 +91,23 @@ class _PhoneListPageState extends State<PhoneListPage> {
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              controller: searchController,
-              onChanged: (value) => searchPhones(),
-              decoration: InputDecoration(
-                labelText: 'Search Phones',
-                border: OutlineInputBorder(),
-              ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    controller: searchController,
+                    onChanged: (value) => searchPhones(),
+                    decoration: InputDecoration(
+                      labelText: 'Search Phones',
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                ),
+                IconButton(
+                  icon: Icon(Icons.clear),
+                  onPressed: clearSearch,
+                ),
+              ],
             ),
           ),
           Expanded(
