@@ -16,9 +16,10 @@ Aplikasi yang menyediakan sumber informasi tentang ponsel beserta spesifikasinya
 
 ## Tech Stacks
 - Flutter
-- Provider
-- Dio
-- TBA
+- Visual Studio Code
+- GitHub
+- RapidApi
+- Gemini AI
 
 ## Sample App Demo
 TBA
