@@ -61,11 +61,8 @@ class _BrandsContentState extends State<BrandsContent> {
             children: [
               ...brandModel.brands.map<Widget>((brand) {
                 return SelectedBrandsCard(
-                  // ignore: unnecessary_null_comparison
-                  text: brand != null ? brand.name! : '',
-                  imagePath:
-                      // ignore: unnecessary_null_comparison
-                      brand != null ? brandNameToImagePath(brand.name!) : '',
+                  text: brand.name ?? '',
+                  imagePath: brandNameToImagePath(brand.name!),
                   onTap: () {
                     Navigator.push(
                       context,
