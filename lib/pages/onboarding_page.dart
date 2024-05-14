@@ -20,7 +20,7 @@ class OnboardingPage extends StatelessWidget {
       OnboardingPageModel(
         title: 'Temukan yang Tepat',
         description:
-            'Temukan ponsel yang tepat dengan fitur perbandingan kami.',
+            'Temukan ponsel yang tepat sesuai kebutuhan dengan fitur rekomendasi ponsel kami.',
         image: 'assets/img/onboarding/onboarding_1.png',
         bgColor: const Color(0xff1eb090),
       ),
@@ -34,24 +34,32 @@ class OnboardingPage extends StatelessWidget {
     ];
 
     return Scaffold(
-      body: OnboardingPagePresenter(pages: onboardingPages),
-    );
+  body: OnboardingPagePresenter(
+    pages: onboardingPages,
+    currentPage: 0,
+    pageController: PageController(initialPage: 0),
+  ),
+);
+
   }
 }
 
 class OnboardingPagePresenter extends StatefulWidget {
   final List<OnboardingPageModel> pages;
+  final PageController pageController;
 
-  const OnboardingPagePresenter({Key? key, required this.pages})
-      : super(key: key);
+  const OnboardingPagePresenter({
+    Key? key,
+    required this.pages,
+    required this.pageController, required int currentPage,
+  }) : super(key: key);
 
   @override
-  State<OnboardingPagePresenter> createState() => _OnboardingPageState();
+  State<OnboardingPagePresenter> createState() => _OnboardingPagePresenterState();
 }
 
-class _OnboardingPageState extends State<OnboardingPagePresenter> {
-  int _currentPage = 0;
-  final PageController _pageController = PageController(initialPage: 0);
+class _OnboardingPagePresenterState extends State<OnboardingPagePresenter> {
+  int _currentPage = 0; 
 
   @override
   Widget build(BuildContext context) {
@@ -66,40 +74,35 @@ class _OnboardingPageState extends State<OnboardingPagePresenter> {
             children: [
               Expanded(
                 child: PageView.builder(
-                  controller: _pageController,
+                  controller: widget.pageController,
                   itemCount: widget.pages.length,
                   onPageChanged: (idx) {
                     setState(() {
-                      _currentPage = idx;
+                      _currentPage = idx; 
                     });
                   },
                   itemBuilder: (context, idx) {
-                    final item = widget.pages[idx];
-                    return Column(
-                      children: [
-                        OnboardingWidgets.widgetImage(item.image),
-                        OnboardingWidgets.widgetTitle(item.title),
-                        OnboardingWidgets.widgetDescription(item.description),
-                      ],
-                    );
+                    return OnboardingWidget(page: widget.pages[idx]);
                   },
                 ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: widget.pages
-                    .map((item) => AnimatedContainer(
-                          duration: const Duration(milliseconds: 250),
-                          width: _currentPage == widget.pages.indexOf(item)
-                              ? 30
-                              : 8,
-                          height: 8,
-                          margin: const EdgeInsets.all(2.0),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                        ))
+                    .asMap()
+                    .entries
+                    .map(
+                      (entry) => AnimatedContainer(
+                        duration: const Duration(milliseconds: 250),
+                        width: _currentPage == entry.key ? 30 : 8,
+                        height: 8,
+                        margin: const EdgeInsets.all(2.0),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                      ),
+                    )
                     .toList(),
               ),
               SizedBox(
@@ -135,15 +138,16 @@ class _OnboardingPageState extends State<OnboardingPagePresenter> {
                         ),
                       ),
                       onPressed: () {
-                        if (_currentPage == widget.pages.length - 1) {
+                        final int nextPage = _currentPage + 1;
+                        if (nextPage == widget.pages.length) {
                           SharedPref.createToken();
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => const HomePage()));
                         } else {
-                          _pageController.animateToPage(
-                            _currentPage + 1,
+                          widget.pageController.animateToPage(
+                            nextPage,
                             curve: Curves.easeInOutCubic,
                             duration: const Duration(milliseconds: 250),
                           );
@@ -152,9 +156,7 @@ class _OnboardingPageState extends State<OnboardingPagePresenter> {
                       child: Row(
                         children: [
                           Text(
-                            _currentPage == widget.pages.length - 1
-                                ? "Finish"
-                                : "Next",
+                            _currentPage == widget.pages.length - 1 ? "Finish" : "Next",
                           ),
                           const SizedBox(width: 8),
                           Icon(
