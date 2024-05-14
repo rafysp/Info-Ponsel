@@ -6,6 +6,7 @@ class PonselTerbaruService {
   static Future<List<List<PonselTerbaruModel>>>
       fetchPhoneModelsForSelectedBrands() async {
     List<int> brandIds = [9, 46, 48, 58, 80, 82, 98, 118, 119];
+    //
     List<List<PonselTerbaruModel>> allBrandPhoneModels = [];
 
     try {
@@ -22,10 +23,14 @@ class PonselTerbaruService {
 
         if (response.statusCode == 200) {
           List<dynamic> data = response.data['data'] ?? [];
-          List<PonselTerbaruModel> brandPhoneModels =
-              data.map((json) => PonselTerbaruModel.fromJson(json)).toList();
-              // Fungsi map() digunakan untuk mengubah setiap item dalam list
-          allBrandPhoneModels.add(brandPhoneModels);
+          if (data.isNotEmpty) {
+            var firstPhoneData = data.first; // Mengambil data ponsel pertama (terbaru)
+            PonselTerbaruModel firstPhoneModel =
+                PonselTerbaruModel.fromJson(firstPhoneData);
+            allBrandPhoneModels.add([
+              firstPhoneModel
+            ]); // Menambahkan model ponsel pertama ke dalam daftar
+          }
         } else {
           print('Request failed with status: ${response.statusCode}');
         }
