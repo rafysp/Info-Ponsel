@@ -1,4 +1,3 @@
-import 'dart:convert';
 
 class DetailPhone {
   final Map<String, List<AllSpec>> allSpecs;
