@@ -27,10 +27,20 @@ Aplikasi yang menyediakan sumber informasi tentang ponsel beserta spesifikasinya
 
 ### Home Page
 ![image](https://github.com/user-attachments/assets/e19424af-d12c-49d9-8ca4-799083628875)
+
+### All Brands Page
 ![image](https://github.com/user-attachments/assets/930519cf-5e58-483a-9776-24792ca7e63a)
+
+### Show Phone List by Brand
 ![image](https://github.com/user-attachments/assets/61e041a9-a17a-42a9-9bea-e6b3656c4ee4)
+
+### Phone Detail Specification
 ![image](https://github.com/user-attachments/assets/062c891a-24df-49a4-ac7e-221fbc80257e)
+
+### Favorite Page
 ![image](https://github.com/user-attachments/assets/b2a54645-9640-4209-983c-fecf20cd6e52)
+
+### Phone Recommendation Based Gemini AI
 ![image](https://github.com/user-attachments/assets/5f99d85b-2c23-4995-a815-605633c786db)
 
 
